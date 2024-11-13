@@ -55,6 +55,38 @@ The Valo-Trade mobile application extends the functionality of the Valo-Trade we
 
     * On the other hand, `final` is more flexible, as it allows a variable to be assigned at runtime. Once a final variable is assigned, its value cannot be modified, but it doesn’t require an immediate value at the time of declaration. A final variable can thus hold values that are only known at runtime, like the current date and time. For instance, `final DateTime now = DateTime.now();` sets the variable `now` to the current date and time at runtime, which then remains constant. In short, `const` is a compile-time constant and more restrictive, while `final` allows for runtime assignment, making it suitable for values known only during execution.
 
+## Changelog Tugas 8
+### FAQ
+1. **What is the use of `const` in Flutter? Explain the benefits of using `const` in Flutter code. When should `const be` used, and when should it not be used?** In Flutter, `const` is used to set compile-time constants, meaning that values marked with it remain fixed and unchangeable throughout the app’s runtime. Using `const` provides efficiency gains since Flutter can optimize storage by reusing widgets or data marked with this keyword, eliminating redundant builds. This enhances app speed and performance, especially when applied to static content that doesn’t change. `const` is ideal for widgets or data that remain consistent and don’t rely on dynamic changes or user input. However, it’s unsuitable for variables that need updates during runtime, as `const` restricts reassignment after initialization.
+
+2. **Explain and compare the use of `Column` and `Row` in Flutter. Provide an example implementation for each layout widget.** `Column` and `Row` are layout widgets in Flutter, with `Column` stacking children vertically and `Row` arranging them horizontally. `Column` is useful for creating layouts that need elements placed one on top of another, like lists or forms, while `Row` is practical for arranging items side by side, such as icons with labels.
+    * **Example of `Column`**:
+    ```dart
+    Column(
+        children: <Widget>[
+            Text('This is line 1'),
+            Text('This is line 2'),
+            Text('This is line 3'),
+        ],
+    )
+    ```
+    * **Example of `Row`**:
+    ```dart
+    Row(
+        children: <Widget>[
+            Icon(Icons.star),
+            Text('Star'),
+        ],
+    )
+    ```
+3. **What input elements did you use in the form page created in this task? Are there other Flutter input elements you did not use in this task?** The form consists of `TextFormField` inputs for `username`, `price`, and `description`, matching the types used in the app’s model attributes. Other available input elements not included here are:
+    * `DropdownButton`: Ideal for selecting from a list of options.
+    * `Switch`: Allows toggling between on/off states.
+    * `Slider`: Lets users pick a value within a continuous or fixed range. These elements were not needed in this form but are handy for options requiring selection or range-based inputs.
+
+4. **How did you set the theme in your Flutter application for consistency? Did you apply themes in your application?** To ensure a cohesive theme, I used Flutter’s `ThemeData` within `MaterialApp`, defining primary and secondary colors, text styles, and other visual settings. This makes sure all pages follow the same design language, offering a uniform look. Yes, I implemented a theme to define consistent colors and fonts across the app.
+
+5. **How did you manage navigation in an app with multiple pages in Flutter?** Navigation between multiple pages in the app is managed with Flutter’s `Navigator` widget and `MaterialPageRoute`. I used methods like `Navigator.push()` to add routes to the stack, enabling users to switch between screens and return via the back button. A drawer menu was also added for seamless navigation, giving users quick access to different app sections.
 
 ## Additional Information
 [In progress]
